@@ -1,10 +1,12 @@
-FROM circleci/golang:1.10 as builder
+FROM golang:alpine as builder
+WORKDIR /go/src/app
+COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /main
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 
 FROM scratch
 WORKDIR /root
 
-COPY --from=builder /main /main
+COPY --from=builder /go/bin /main
 
 ENTRYPOINT ["/main/pr-poster"]
