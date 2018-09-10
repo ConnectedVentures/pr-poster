@@ -7,4 +7,4 @@ builds:
       - amd64
 dockers:
   - image: connectedventures/pr-poster
-    dockerfile: Dockerfile.goreleaser
+    dockerfile: Dockerfile
