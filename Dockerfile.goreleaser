@@ -1,3 +1,3 @@
 FROM scratch
-COPY ./dist/linux_amd64/pr-poster /
+COPY /home/circleci/project/dist/linux_amd64/pr-poster /
 ENTRYPOINT ["/pr-poster"]
