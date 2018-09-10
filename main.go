@@ -16,7 +16,7 @@ var (
 )
 
 type payload struct {
-	body string
+	Body string `json:"body"`
 }
 
 func main() {
@@ -79,7 +79,7 @@ func main() {
 	}
 
 	githubPayload := payload{
-		body: bodyBuffer.String(),
+		Body: bodyBuffer.String(),
 	}
 
 	githubPayloadBuffer, err := json.Marshal(githubPayload)
