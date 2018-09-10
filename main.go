@@ -89,7 +89,7 @@ func main() {
 	}
 
 	url := getPullRequestPostURL(username, repositoryName, pullRequestID)
-	fmt.Printf("Sending request: %v\n", githubPayloadBuffer)
+	fmt.Printf("Sending request: %v\n", string(githubPayloadBuffer))
 	request, err := http.NewRequest("POST", url, bytes.NewBuffer(githubPayloadBuffer))
 	if err != nil {
 		fmt.Println(fmt.Sprintf("http.NewRequest() error: %v\n", err))
