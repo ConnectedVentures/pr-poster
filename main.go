@@ -106,14 +106,18 @@ func main() {
 	}
 	defer response.Body.Close()
 
-	data, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		fmt.Printf("ioutil.ReadAll() error: %v\n", err)
+	if response.StatusCode != http.StatusCreated {
+		responseBody, err := ioutil.ReadAll(response.Body)
+		if err != nil {
+			fmt.Printf("ioutil.ReadAll() error: %v\n", err)
+			os.Exit(1)
+		}
+
+		fmt.Printf("Comment not created, error: %v\nbody: %q", err, string(responseBody))
 		os.Exit(1)
 	}
 
-	fmt.Printf("read response.Body successfully:\n%v\n", string(data))
-
+	fmt.Println("PR comment posted successfully")
 	os.Exit(0)
 }
 
