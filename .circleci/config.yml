@@ -1,8 +1,7 @@
 version: 2
 jobs:
   release:
-    docker:
-      - image: circleci/golang:1.10
+    machine: true
     steps:
       - checkout
       - run: curl -sL https://git.io/goreleaser | bash
