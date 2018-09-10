@@ -1,0 +1,3 @@
+FROM scratch
+COPY pr-releaser /
+ENTRYPOINT ["/mybin"]
