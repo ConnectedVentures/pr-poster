@@ -5,6 +5,3 @@ builds:
       - linux
     goarch:
       - amd64
-dockers:
-  - image: connectedventures/pr-poster
-    dockerfile: Dockerfile.goreleaser
