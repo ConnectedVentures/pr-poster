@@ -5,7 +5,6 @@ jobs:
     steps:
       - checkout
       - run: curl -sL https://git.io/goreleaser | bash
-      - run: docker build .
 
 workflows:
   version: 2
