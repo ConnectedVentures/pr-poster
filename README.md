@@ -2,6 +2,27 @@
 
 Post content to a Github PR easily from CI
 
+## How to Use
+
+You can either pipe content into `pr-poster`, or if you have content in a file, just use the file as an argument:
+
+```yaml
+  build:
+    docker:
+      - image: connectedventures/pr-poster:v1.0
+    steps:
+      - run: echo "Test" | pr-poster
+```
+
+```yaml
+  build:
+    docker:
+      - image: connectedventures/pr-poster:v1.0
+    steps:
+      - run: echo "Test" > output.txt
+      - run: pr-poster output.txt
+```
+
 ## Required Environment Variables
 
 ### Project/Context Variables
