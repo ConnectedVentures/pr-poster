@@ -1,3 +1,3 @@
 FROM scratch
-COPY pr-releaser /
-ENTRYPOINT ["/mybin"]
+COPY dist/linux_amd64/pr-poster /
+ENTRYPOINT ["/pr-poster"]
